@@ -1,0 +1,4 @@
+# DAPLink/CMSIS-DAP programmer through pyOCD.
+board_runner_args(pyocd "--target=nrf52840" "--frequency=4000000")
+
+include(${ZEPHYR_BASE}/boards/common/pyocd.board.cmake)

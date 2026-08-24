@@ -1,0 +1,11 @@
+identifier: supermini_custom/nrf52840
+name: SuperMini Custom nRF52840
+vendor: others
+type: mcu
+arch: arm
+ram: 256
+flash: 1024
+toolchain:
+  - zephyr
+supported:
+  - gpio

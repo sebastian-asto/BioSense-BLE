@@ -1,0 +1,5 @@
+description: Weifengheng WF100DPZ digital pressure sensor
+
+compatible: "weifengheng,wf100dpz"
+
+include: [sensor-device.yaml, i2c-device.yaml]
