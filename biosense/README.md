@@ -1,17 +1,35 @@
-# biosense
+# BioSense
 
-A new Flutter project.
+Aplicacion Flutter que escucha la publicidad BLE del sensor BioSense sin
+establecer una conexion. Muestra temperatura, humedad, presion relativa y el
+voltaje VDD medido por el nRF52840.
 
-## Getting Started
+## Identificacion BLE
 
-This project is a starting point for a Flutter application.
+La aplicacion solo acepta Manufacturer Data con:
 
-A few resources to get you started if this is your first Flutter project:
+- Company ID de desarrollo: `0xFFFF`
+- Magic: `BS`
+- Version: `1`
+- Device ID: `0xB1050001`
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+La direccion BLE del sistema operativo se muestra como informacion, pero no se
+usa como filtro porque puede cambiar y en iOS no representa una direccion MAC.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Uso
+
+1. Cargar el firmware BioSense en el nRF52840 y encenderlo sin presion aplicada
+   para permitir la tara del sensor.
+2. Instalar la aplicacion en un telefono fisico y aceptar el permiso Bluetooth.
+3. Mantener la aplicacion abierta. El primer dato puede tardar hasta un minuto;
+   los siguientes llegan cada 60 segundos.
+
+```powershell
+flutter run
+```
+
+El APK de depuracion se genera con:
+
+```powershell
+flutter build apk --debug
+```
