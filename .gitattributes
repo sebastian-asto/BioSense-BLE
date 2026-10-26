@@ -1,0 +1,8 @@
+# Documentation and release artifacts are binary files.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.apk binary
+*.rar binary
+

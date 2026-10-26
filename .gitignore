@@ -1,0 +1,5 @@
+# Temporary files generated while reviewing or editing documentation
+/tmp/
+/output/
+/doc/image/*preview*.png
+
